@@ -4,7 +4,9 @@
   "description": "Build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server/index.js",
+    "build": "webpack"
   },
   "author": "Hikmani Syariful Fajar",
   "license": "ISC",
