@@ -2,6 +2,8 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -9,6 +11,9 @@ module.exports = {
   output: {
     libraryTarget: "var",
     library: "Client"
+  },
+  optimization: {
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()]
   },
   module: {
     rules: [
