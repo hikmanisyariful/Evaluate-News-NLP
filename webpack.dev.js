@@ -1,24 +1,17 @@
 const path = require("path");
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { merge } = require("webpack-merge");
+const common = require("./webpack.common.js");
 
-module.exports = {
+module.exports = merge(common, {
   mode: "development",
-  entry: "./src/client/index.js",
   devtool: "source-map",
   output: {
-    path: path.resolve(process.cwd(), "dist"),
-    libraryTarget: "var",
-    library: "Client"
+    path: path.resolve(process.cwd(), "dist")
   },
   module: {
     rules: [
-      {
-        test: "/.js$/",
-        exclude: /node_modules/,
-        loader: "babel-loader"
-      },
       {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"]
@@ -26,13 +19,9 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/client/views/index.html",
-      filename: "./index.html"
-    }),
     new CleanWebpackPlugin({
       dry: true,
       verbose: true
     })
   ]
-};
+});
