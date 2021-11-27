@@ -6,8 +6,11 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: "./src/client/index.js",
+  devtool: "source-map",
   output: {
-    path: path.resolve(process.cwd(), "dist")
+    path: path.resolve(process.cwd(), "dist"),
+    libraryTarget: "var",
+    library: "Client"
   },
   module: {
     rules: [
@@ -18,14 +21,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader"
-        ]
+        use: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
