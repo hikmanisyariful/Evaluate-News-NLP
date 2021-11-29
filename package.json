@@ -4,7 +4,7 @@
   "description": "Build a web tool that allows users to run Natural Language Processing (NLP) on articles or blogs found on other websites",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "start": "node src/server/index.js",
     "build-prod": "webpack --config webpack.prod.js",
     "build-dev": "webpack-dev-server --config webpack.dev.js --open"

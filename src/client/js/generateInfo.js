@@ -20,8 +20,10 @@ function generateScoreInfo(score_tag) {
       return "negative";
     case "N+":
       return "strong negative";
-    default:
+    case "NONE":
       return "without polarity";
+    default:
+      return "undefined";
   }
 }
 
@@ -33,4 +35,4 @@ function generateSubjectivityInfo(subjectivity) {
   }
 }
 
-export { generateInfo };
+export { generateInfo, generateScoreInfo, generateSubjectivityInfo };
