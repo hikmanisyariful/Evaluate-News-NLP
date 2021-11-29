@@ -5,7 +5,7 @@ async function getApiKey() {
     const apiKey = json.apiKey;
     return apiKey;
   } catch (error) {
-    console.log("Error::getApiKey", error.response.data);
+    console.log("Error::getApiKey", error);
   }
 }
 

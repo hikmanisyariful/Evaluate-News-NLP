@@ -1,9 +1,4 @@
-async function analyzeSentiment(apiKey, textInput) {
-  const formData = new FormData();
-  formData.append("key", apiKey);
-  formData.append("txt", textInput);
-  formData.append("lang", "en");
-
+async function analyzeSentiment(formData) {
   const requestOptions = {
     method: "POST",
     body: formData,
