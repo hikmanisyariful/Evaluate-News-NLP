@@ -8,9 +8,9 @@ function handleSubmit(event) {
     const formData = new FormData();
     formData.append("key", apiKey);
     formData.append("txt", formText);
-    formData.append("lang", "en");
+    formData.append("lang", "auto");
     Client.analyzeSentiment(formData).then(data => {
-      Client.generateInfo(data);
+      generateInfo(data);
     });
   });
 }

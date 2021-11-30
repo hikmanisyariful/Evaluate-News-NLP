@@ -11,6 +11,7 @@ async function analyzeSentiment(formData) {
       requestOptions
     );
     const json = await response.json();
+    console.log(json);
     return json;
   } catch (error) {
     console.log("Error::analysisSentiment", error);
