@@ -28,15 +28,32 @@ function isUrlValid(userInput) {
 }
 
 function generateInfo(data) {
+  isUrl(data);
+  document.getElementById("name").value = "";
+}
+
+function isUrl(data) {
   const results = document.getElementById("results");
-  results.innerHTML = `
-    <p>Score: The text analyzed expresses ${generateScoreInfo(
+  if (data.sentence_list.length !== 0) {
+    results.innerHTML = `
+    <p><strong>URL:</strong> ${data.sentence_list[0].text}</p>
+    <p><strong>Score:</strong> The news analyzed expresses ${generateScoreInfo(
       data.score_tag
     )} sentiment.</p>
-    <p>Subjectivity: The text is ${generateSubjectivityInfo(
+    <p><strong>Subjectivity:</strong> The news is ${generateSubjectivityInfo(
+      data.subjectivity
+    )}</p>
+    `;
+  } else {
+    results.innerHTML = `
+    <p><strong>Score:</strong> The news analyzed expresses ${generateScoreInfo(
+      data.score_tag
+    )} sentiment.</p>
+    <p><strong>Subjectivity:</strong> The news is ${generateSubjectivityInfo(
       data.subjectivity
     )}</p>
   `;
+  }
 }
 
 function generateScoreInfo(score_tag) {
@@ -70,5 +87,6 @@ export {
   handleSubmit,
   generateInfo,
   generateScoreInfo,
-  generateSubjectivityInfo
+  generateSubjectivityInfo,
+  isUrl
 };

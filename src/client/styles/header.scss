@@ -1,5 +1,20 @@
+$font-size: 2em;
+$font-weight: 550;
+
 header {
   display: flex;
-  justify-content: space-between;
-  padding: 10px 40px;
+  justify-content: center;
+  padding: 50px 40px;
+
+  .title {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+
+    h1 {
+      font-size: $font-size;
+      font-weight: $font-weight;
+      text-align: center;
+    }
+  }
 }

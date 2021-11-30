@@ -1,0 +1,16 @@
+$secondary-color: #ffffff;
+$third-background-color: #000000;
+$font-size: 0.8em;
+
+footer {
+  background-color: $third-background-color;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    color: $secondary-color;
+    font-size: $font-size;
+  }
+}

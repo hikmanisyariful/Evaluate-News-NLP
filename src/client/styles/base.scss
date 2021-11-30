@@ -1,7 +1,18 @@
+// background-color
+$primary-background-color: #ffebcd;
+$secondary-background-color: #deb887;
+
+// font-family
+$font-stack: "Montserrat", sans-serif;
+
+$font-size: 1em;
+
 body {
+  font-family: $font-stack;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: $primary-background-color;
 }
 
 main {
@@ -11,4 +22,33 @@ main {
 section {
   max-width: 800px;
   margin: 50px auto;
+
+  .form-submit {
+    background-color: $secondary-background-color;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "in in in in in in in btn";
+
+    #name {
+      grid-area: in;
+    }
+
+    #btn {
+      grid-area: btn;
+      margin-left: 10px;
+    }
+  }
+
+  #results {
+    margin-top: 20px;
+
+    p {
+      font-size: $font-size;
+      margin: 10px;
+    }
+  }
+}
+
+strong {
+  font-weight: 700;
 }
